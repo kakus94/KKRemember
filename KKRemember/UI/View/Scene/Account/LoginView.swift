@@ -13,51 +13,55 @@ struct LoginView: View {
   @State var password: String = ""
   @State var emailRecovery: String = ""
 
+  @Binding var login: Bool
+  
   @State private var registerPresentView: Bool = false
   @State private var showForgotPassword: Bool = false
   
   var body: some View {
-    ScrollView {
+    NavigationStack {
+      ScrollView {
 
-      Logo()
+        Logo()
 
-      VStack(spacing: 20) {
-        
-        EntryTextLabel(label: "Email", placeholder: "Email", value: self.$email)
-        
-        EntryTextLabel(label: "Password", placeholder: "Password", value: self.$password)
+        VStack(spacing: 20) {
+          
+          EntryTextLabel(label: "Email", placeholder: "Email", value: self.$email)
+          
+          EntryTextLabel(label: "Password", placeholder: "Password", value: self.$password)
 
-        ButtonApp(action: {}) {
-          TextBody("Login")
-            .maxWidth(.center)
+          ButtonApp(action: { login.toggle() }) {
+            TextBody("Login")
+              .maxWidth(.center)
+          }
+          .foregroundColor(.green)
+
+          ButtonApp(action: { registerPresentView = true }) {
+            TextBody("I don't have an account")
+              .maxWidth(.center)
+          }
+
+          ButtonApp(action: { showForgotPassword.toggle() }) {
+            TextBody("I forgot my password")
+              .maxWidth(.center)
+          }
+
         }
-        .foregroundColor(.green)
-
-        ButtonApp(action: { registerPresentView = true }) {
-          TextBody("I don't have an account")
-            .maxWidth(.center)
-        }
-
-        ButtonApp(action: { showForgotPassword.toggle() }) {
-          TextBody("I forgot my password")
-            .maxWidth(.center)
-        }
+        .paddingAppDefault(.horizontal)
+        .ipadLoginSize
 
       }
-      .paddingAppDefault(.horizontal)
-      .ipadLoginSize
-
+      .maxWidth(.center)
+      
+      .navigationDestination(isPresented: $registerPresentView) {
+        RegisterView()
+      }
+      
+      .sheet(isPresented: $showForgotPassword) {
+        ForgotPassword(value: $emailRecovery)
+          .presentationDetents([ .medium, .large])
+          .presentationDragIndicator(.automatic)
     }
-    .maxWidth(.center)
-    
-    .navigationDestination(isPresented: $registerPresentView) {
-      RegisterView()
-    }
-    
-    .sheet(isPresented: $showForgotPassword) {
-      ForgotPassword(value: $emailRecovery)
-        .presentationDetents([ .medium, .large])
-        .presentationDragIndicator(.automatic)
     }
   }
 
@@ -65,7 +69,7 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
   static var previews: some View {
-    LoginView()
+    LoginView(login: .constant(false))
   }
 }
 

@@ -11,14 +11,18 @@ import SwiftUI
 struct KKRememberApp: App {
 
   @State var route: NavigationPath = .init()
+  @State var loginEnable: Bool = false
   
   var body: some Scene {
     WindowGroup {
-      NavigationStack(path: $route) {
-        LoginView()
-      }      
+        if !loginEnable {
+          LoginView(login: $loginEnable)
+        } else {
+          MainView()
+        }
+      }
     }
-  }
+  
 }
 
 enum Route: Hashable {

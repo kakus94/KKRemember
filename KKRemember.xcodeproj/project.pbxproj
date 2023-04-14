@@ -18,6 +18,10 @@
 		1950A4F329CCF25900ECA727 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1950A4F229CCF25900ECA727 /* Text.swift */; };
 		1950A4F529CCF43C00ECA727 /* EntryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1950A4F429CCF43C00ECA727 /* EntryText.swift */; };
 		196085EA29E9DCF3005C7E1E /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196085E929E9DCF3005C7E1E /* ForgotPassword.swift */; };
+		196085ED29E9E761005C7E1E /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196085EC29E9E761005C7E1E /* Mock.swift */; };
+		196085F029E9E89F005C7E1E /* ReminderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196085EF29E9E89F005C7E1E /* ReminderItem.swift */; };
+		196085F229E9EADE005C7E1E /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196085F129E9EADE005C7E1E /* ItemListView.swift */; };
+		196085F529E9EDDF005C7E1E /* ExDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196085F429E9EDDF005C7E1E /* ExDate.swift */; };
 		199CC09A29BA8AF000D4F51D /* KKRememberApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199CC09929BA8AF000D4F51D /* KKRememberApp.swift */; };
 		199CC09E29BA8AF000D4F51D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 199CC09D29BA8AF000D4F51D /* Assets.xcassets */; };
 		199CC0A129BA8AF000D4F51D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 199CC0A029BA8AF000D4F51D /* Preview Assets.xcassets */; };
@@ -62,6 +66,10 @@
 		1950A4F229CCF25900ECA727 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		1950A4F429CCF43C00ECA727 /* EntryText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryText.swift; sourceTree = "<group>"; };
 		196085E929E9DCF3005C7E1E /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
+		196085EC29E9E761005C7E1E /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
+		196085EF29E9E89F005C7E1E /* ReminderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderItem.swift; sourceTree = "<group>"; };
+		196085F129E9EADE005C7E1E /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
+		196085F429E9EDDF005C7E1E /* ExDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExDate.swift; sourceTree = "<group>"; };
 		199CC09629BA8AF000D4F51D /* KKRemember.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKRemember.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		199CC09929BA8AF000D4F51D /* KKRememberApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKRememberApp.swift; sourceTree = "<group>"; };
 		199CC09D29BA8AF000D4F51D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -167,6 +175,7 @@
 				1950A4F429CCF43C00ECA727 /* EntryText.swift */,
 				1941906129CCFA02001391C6 /* Logo.swift */,
 				19DD697B29D3115700E8D938 /* ButtonApp.swift */,
+				196085F129E9EADE005C7E1E /* ItemListView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -179,6 +188,30 @@
 				196085E929E9DCF3005C7E1E /* ForgotPassword.swift */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		196085EB29E9E720005C7E1E /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				196085EC29E9E761005C7E1E /* Mock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		196085EE29E9E766005C7E1E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				196085EF29E9E89F005C7E1E /* ReminderItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		196085F329E9EDC3005C7E1E /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				196085F429E9EDDF005C7E1E /* ExDate.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		199CC08D29BA8AF000D4F51D = {
@@ -204,6 +237,9 @@
 		199CC09829BA8AF000D4F51D /* KKRemember */ = {
 			isa = PBXGroup;
 			children = (
+				196085F329E9EDC3005C7E1E /* Helper */,
+				196085EE29E9E766005C7E1E /* Model */,
+				196085EB29E9E720005C7E1E /* Mock */,
 				1950A4DE29BBED9400ECA727 /* System */,
 				1950A4DF29BC919E00ECA727 /* Injected */,
 				1950A4E629BC9B9C00ECA727 /* UI */,
@@ -430,10 +466,12 @@
 				19DD697829D2FFFB00E8D938 /* ShareExtention.swift in Sources */,
 				1950A4ED29CCF08800ECA727 /* LoginView.swift in Sources */,
 				19DD697C29D3115700E8D938 /* ButtonApp.swift in Sources */,
+				196085F229E9EADE005C7E1E /* ItemListView.swift in Sources */,
 				1950A4E829BC9BFF00ECA727 /* SystemEventHandler.swift in Sources */,
 				199CC09A29BA8AF000D4F51D /* KKRememberApp.swift in Sources */,
 				1950A4F529CCF43C00ECA727 /* EntryText.swift in Sources */,
 				19EEE5AE29E15DFD00C9581F /* ListPageView.swift in Sources */,
+				196085ED29E9E761005C7E1E /* Mock.swift in Sources */,
 				19EEE5B029E15E2900C9581F /* LikePageView.swift in Sources */,
 				1950A4E129BC91CC00ECA727 /* AppState.swift in Sources */,
 				1950A4EF29CCF1F600ECA727 /* RegisterView.swift in Sources */,
@@ -441,6 +479,8 @@
 				1950A4E529BC933100ECA727 /* DependencyInjector.swift in Sources */,
 				1941906229CCFA02001391C6 /* Logo.swift in Sources */,
 				19EEE5B529E15E6200C9581F /* SettingPageView.swift in Sources */,
+				196085F029E9E89F005C7E1E /* ReminderItem.swift in Sources */,
+				196085F529E9EDDF005C7E1E /* ExDate.swift in Sources */,
 				199CC0C629BA90C900D4F51D /* TestingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,8 +8,35 @@
 import SwiftUI
 
 struct LikePageView: View {
+  
+  let itemsLike = ReminderItem.mockReminders
+  
     var body: some View {
-        Text("LikePageView")
+      NavigationStack {
+        List(itemsLike) { item in
+          ItemListView(item: item)
+            .swipeActions(edge: .leading, allowsFullSwipe: true) {
+              
+              Button(action: { print("archivebox") }) {
+                Image(systemName: "archivebox")
+              }
+              .tint(.green)
+              
+              Button(action: { print("star") }) {
+                Image(systemName: "star")
+              }
+              .tint(.yellow)            
+             
+            }
+            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+              Button(action: { print("trash") }) {
+                Image(systemName: "trash")
+              }
+              .tint(.red)
+            }
+        }
+          .navigationTitle("Like")
+      }
     }
 }
 

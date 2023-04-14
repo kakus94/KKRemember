@@ -9,7 +9,10 @@ import SwiftUI
 
 struct ReceivedPageView: View {
     var body: some View {
+      NavigationStack {
         Text("ReceivedPageView")
+          .navigationTitle("Received")
+      }
     }
 }
 
