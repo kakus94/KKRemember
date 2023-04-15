@@ -13,6 +13,10 @@ struct ItemListView: View {
   
     var body: some View {
       HStack {
+        
+        item.complite.image
+          .foregroundColor(item.complite.color)
+        
         VStack(alignment: .leading) {
           Text(item.tittle)
             .font(.body)

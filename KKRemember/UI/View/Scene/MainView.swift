@@ -42,14 +42,14 @@ struct MainView: View {
         LikePageView()
           .id(Selection.page2)
           .tabItem {
-            Label("Like", systemImage: "star")
+            Label("Favorite", systemImage: "star")
           }
           
         
         ReceivedPageView()
           .id(Selection.page3)
           .tabItem {
-            Label("Received", systemImage: "tray.and.arrow.down.fill")
+            Label("Archive", systemImage: "tray.and.arrow.down.fill")
           }
           
         

@@ -10,11 +10,36 @@ import SwiftUI
 struct SettingPageView: View {
     var body: some View {
       NavigationStack {
-        Text("Setting page")
+        List {
+          Cell(label: "Pseudomin") {
+            EntryText(value: .constant("Szejku"))
+          }
+          
+
+        }
           .navigationTitle("Setting")
       } 
     }
+  
+  
+  
 }
+
+
+fileprivate struct Cell<Content: View>: View {
+  
+  var label: String
+  @ViewBuilder var content: () -> Content
+  
+  var body: some View {
+    HStack {
+      Text(label)
+        .maxWidth(.leading)
+      content()
+    }
+  }
+}
+
 
 struct SettingPageView_Previews: PreviewProvider {
     static var previews: some View {
