@@ -28,10 +28,12 @@ struct ItemListView: View {
         .maxWidth(.leading)
         
         VStack{
-          Text(item.date.getString("dd.MM HH:mm"))
+          Text(item.startdate.getString("dd.MM HH:mm"))
             .font(.callout)
-          Text(item.author)
-            .font(.headline)
+          Text(item.enddate.getString("dd.MM HH:mm"))
+            .font(.callout)
+//          Text(item.author)
+//            .font(.headline)
         }
         
       }

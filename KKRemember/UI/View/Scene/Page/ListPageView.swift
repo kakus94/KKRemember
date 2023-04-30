@@ -11,9 +11,11 @@ struct ListPageView: View {
   
   let itemsList = ReminderItem.mockReminders
   
+  @State private var showNew: Bool = false
+  
     var body: some View {
       NavigationStack {
-        List(itemsList.sorted(by: { $0.date < $1.date })) { item in
+        List(itemsList.sorted(by: { $0.startdate < $1.startdate })) { item in
           ItemListView(item: item)
             .swipeActions(edge: .leading, allowsFullSwipe: true) {
               
@@ -44,8 +46,6 @@ struct ListPageView: View {
               .tint(.yellow)
              
             }
-          
-          
             .swipeActions(edge: .trailing, allowsFullSwipe: true) {
               
               Button(action: { print("archivebox") }) {
@@ -59,8 +59,20 @@ struct ListPageView: View {
               .tint(.red)
          
             }
+          
         }
         .navigationTitle("List")
+        .toolbar {
+          ToolbarItemGroup(placement: .navigationBarTrailing) {
+            Button(action: { showNew = true }) {
+              Image(systemName: "plus")
+            }
+          }
+        }
+        .sheet(isPresented: $showNew) {
+          NewSheetView()
+            .presentationDetents([.medium,.large])
+        }
       }
       
     }

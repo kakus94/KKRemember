@@ -23,6 +23,8 @@
 		196085F229E9EADE005C7E1E /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196085F129E9EADE005C7E1E /* ItemListView.swift */; };
 		196085F529E9EDDF005C7E1E /* ExDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196085F429E9EDDF005C7E1E /* ExDate.swift */; };
 		196085F729EABD29005C7E1E /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196085F629EABD29005C7E1E /* FileManager.swift */; };
+		196085F929FEF128005C7E1E /* DatabaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196085F829FEF128005C7E1E /* DatabaseTest.swift */; };
+		196085FD29FEF2CB005C7E1E /* NewSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196085FC29FEF2CB005C7E1E /* NewSheetView.swift */; };
 		199CC09A29BA8AF000D4F51D /* KKRememberApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199CC09929BA8AF000D4F51D /* KKRememberApp.swift */; };
 		199CC09E29BA8AF000D4F51D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 199CC09D29BA8AF000D4F51D /* Assets.xcassets */; };
 		199CC0A129BA8AF000D4F51D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 199CC0A029BA8AF000D4F51D /* Preview Assets.xcassets */; };
@@ -72,6 +74,8 @@
 		196085F129E9EADE005C7E1E /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		196085F429E9EDDF005C7E1E /* ExDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExDate.swift; sourceTree = "<group>"; };
 		196085F629EABD29005C7E1E /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		196085F829FEF128005C7E1E /* DatabaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseTest.swift; sourceTree = "<group>"; };
+		196085FC29FEF2CB005C7E1E /* NewSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSheetView.swift; sourceTree = "<group>"; };
 		199CC09629BA8AF000D4F51D /* KKRemember.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKRemember.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		199CC09929BA8AF000D4F51D /* KKRememberApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKRememberApp.swift; sourceTree = "<group>"; };
 		199CC09D29BA8AF000D4F51D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -164,9 +168,10 @@
 		1950A4EA29CCF03400ECA727 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				1950A4F029CCF21F00ECA727 /* MainView.swift */,
 				196085E829E9DCCC005C7E1E /* Account */,
 				19EEE5B129E15E2E00C9581F /* Page */,
-				1950A4F029CCF21F00ECA727 /* MainView.swift */,
+				196085FC29FEF2CB005C7E1E /* NewSheetView.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				199CC0AA29BA8AF100D4F51D /* KKRememberTests.swift */,
+				196085F829FEF128005C7E1E /* DatabaseTest.swift */,
 			);
 			path = KKRememberTests;
 			sourceTree = "<group>";
@@ -482,6 +488,7 @@
 				196085EA29E9DCF3005C7E1E /* ForgotPassword.swift in Sources */,
 				1950A4E529BC933100ECA727 /* DependencyInjector.swift in Sources */,
 				1941906229CCFA02001391C6 /* Logo.swift in Sources */,
+				196085FD29FEF2CB005C7E1E /* NewSheetView.swift in Sources */,
 				19EEE5B529E15E6200C9581F /* SettingPageView.swift in Sources */,
 				196085F029E9E89F005C7E1E /* ReminderItem.swift in Sources */,
 				196085F529E9EDDF005C7E1E /* ExDate.swift in Sources */,
@@ -493,6 +500,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				196085F929FEF128005C7E1E /* DatabaseTest.swift in Sources */,
 				199CC0AB29BA8AF100D4F51D /* KKRememberTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

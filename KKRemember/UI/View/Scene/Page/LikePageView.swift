@@ -13,7 +13,7 @@ struct LikePageView: View {
   
     var body: some View {
       NavigationStack {
-        List(itemsLike.sorted(by: { $0.date < $1.date })) { item in
+        List(itemsLike.sorted(by: { $0.startdate < $1.startdate })) { item in
           ItemListView(item: item)
             .swipeActions(edge: .leading, allowsFullSwipe: true) {
               

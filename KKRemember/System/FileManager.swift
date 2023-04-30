@@ -12,7 +12,7 @@ actor Database {
   
   static let share: Database = .init()
   
-  func save(_ data: Data, type: TypeSave) {
+  private func save(_ data: Data, type: TypeSave) {
     if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
       let pathWithFileName = documentDirectory.appendingPathComponent(type.url)
       do {
@@ -23,7 +23,7 @@ actor Database {
     }
   }
   
-  func read(type: TypeSave) -> Data? {
+  private func read(type: TypeSave) -> Data? {
     if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
       let pathWithFileName = documentDirectory.appendingPathComponent(type.url)
       do {
@@ -36,8 +36,19 @@ actor Database {
     return nil
   }
   
-  func savaToFile<T: Decodable>(_ model: T) {
-    
+  func savaToFile<T: Encodable>(_ model: T, typeSave: TypeSave) {
+    let encoder = JSONEncoder()
+    if let data = try? encoder.encode(model) {
+      save(data, type: typeSave)
+    }
+  }
+  
+  func readFromTheFile<T: Decodable>(_ type: T.Type, typeSave: TypeSave) throws -> T? {
+    if let data = read(type: typeSave) {
+      let model = try JSONDecoder().decode(T.self, from: data)
+      return model
+    }
+    return nil
   }
   
   enum TypeSave {
