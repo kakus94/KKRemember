@@ -10,6 +10,5 @@ import Foundation
 protocol SystemEventHandler {}
 
 struct RealSystemEventHandler: SystemEventHandler {
-  let container: DIContainer
 
 }

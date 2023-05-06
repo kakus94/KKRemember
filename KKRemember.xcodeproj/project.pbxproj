@@ -10,7 +10,6 @@
 		1941906229CCFA02001391C6 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1941906129CCFA02001391C6 /* Logo.swift */; };
 		1950A4E129BC91CC00ECA727 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1950A4E029BC91CC00ECA727 /* AppState.swift */; };
 		1950A4E329BC92D600ECA727 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1950A4E229BC92D600ECA727 /* AppEnvironment.swift */; };
-		1950A4E529BC933100ECA727 /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1950A4E429BC933100ECA727 /* DependencyInjector.swift */; };
 		1950A4E829BC9BFF00ECA727 /* SystemEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1950A4E729BC9BFF00ECA727 /* SystemEventHandler.swift */; };
 		1950A4ED29CCF08800ECA727 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1950A4EC29CCF08800ECA727 /* LoginView.swift */; };
 		1950A4EF29CCF1F600ECA727 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1950A4EE29CCF1F600ECA727 /* RegisterView.swift */; };
@@ -61,7 +60,6 @@
 		1941906129CCFA02001391C6 /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
 		1950A4E029BC91CC00ECA727 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		1950A4E229BC92D600ECA727 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
-		1950A4E429BC933100ECA727 /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
 		1950A4E729BC9BFF00ECA727 /* SystemEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemEventHandler.swift; sourceTree = "<group>"; };
 		1950A4EC29CCF08800ECA727 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		1950A4EE29CCF1F600ECA727 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -142,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				1950A4E029BC91CC00ECA727 /* AppState.swift */,
-				1950A4E429BC933100ECA727 /* DependencyInjector.swift */,
 			);
 			path = Injected;
 			sourceTree = "<group>";
@@ -486,7 +483,6 @@
 				196085F729EABD29005C7E1E /* FileManager.swift in Sources */,
 				1950A4EF29CCF1F600ECA727 /* RegisterView.swift in Sources */,
 				196085EA29E9DCF3005C7E1E /* ForgotPassword.swift in Sources */,
-				1950A4E529BC933100ECA727 /* DependencyInjector.swift in Sources */,
 				1941906229CCFA02001391C6 /* Logo.swift in Sources */,
 				196085FD29FEF2CB005C7E1E /* NewSheetView.swift in Sources */,
 				19EEE5B529E15E6200C9581F /* SettingPageView.swift in Sources */,
