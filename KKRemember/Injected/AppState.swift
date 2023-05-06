@@ -20,14 +20,10 @@ class AppState: ObservableObject {
         do {
           self.appEnvironment.listItems = try await Database.share
             .readFromTheFile(ReminderItems.self, typeSave: .list) ?? .init()
-          self.appEnvironment.archiveItems = try await Database.share.readFromTheFile(
-            ReminderItems.self,
-            typeSave: .archive
-          ) ?? .init()
-          self.appEnvironment.favoriteItems = try await Database.share.readFromTheFile(
-            ReminderItems.self,
-            typeSave: .favorite
-          ) ?? .init()
+          self.appEnvironment.archiveItems = try await Database.share
+            .readFromTheFile(ReminderItems.self,typeSave: .archive) ?? .init()
+          self.appEnvironment.favoriteItems = try await Database.share
+            .readFromTheFile(ReminderItems.self,typeSave: .favorite) ?? .init()
         } catch {}
 
       }

@@ -52,6 +52,10 @@ struct ReminderItem: Identifiable, Decodable, Encodable {
 
 struct ReminderItems: Decodable, Encodable {
   var items: [ReminderItem] = []
+  
+  func getSortedItems() -> [ReminderItem] {
+    self.items.sorted(by: { $0.startdate < $1.startdate })
+  }
 }
 
 extension ReminderItem {

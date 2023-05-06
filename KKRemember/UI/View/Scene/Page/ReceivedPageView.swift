@@ -13,7 +13,7 @@ struct ReceivedPageView: View {
 
   var body: some View {
     NavigationStack {
-      List(self.items.items.sorted(by: { $0.startdate < $1.startdate })) { item in
+      List(self.items.getSortedItems()) { item in
         ItemListView(item: item)
           .swipeActions(edge: .leading, allowsFullSwipe: true) {
             self.swipeActionLeading(item)
