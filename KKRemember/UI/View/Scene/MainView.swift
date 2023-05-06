@@ -34,22 +34,24 @@ struct MainView: View {
     }
   }
 
+  @EnvironmentObject var appState: AppState
+
   var body: some View {
 
     TabView(selection: self.$selection) {
-      ListPageView()
+      ListPageView(itemsList: self.appState.appEnvironment.listItems)
         .id(Selection.page1)
         .tabItem {
           Label("List", systemImage: "list.bullet.rectangle")
         }
 
-      LikePageView()
+      LikePageView(itemsLike: self.appState.appEnvironment.favoriteItems)
         .id(Selection.page2)
         .tabItem {
           Label("Favorite", systemImage: "star")
         }
 
-      ReceivedPageView()
+      ReceivedPageView(items: self.appState.appEnvironment.archiveItems)
         .id(Selection.page3)
         .tabItem {
           Label("Archive", systemImage: "tray.and.arrow.down.fill")
@@ -62,9 +64,6 @@ struct MainView: View {
         }
 
     }
-//      .navigationTitle(selection.getNaviTitle())
-//    .navigationBarTitleDisplayMode(.automatic)
-//    }
   }
 
   // MARK: Private

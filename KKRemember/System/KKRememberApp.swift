@@ -10,17 +10,19 @@ import SwiftUI
 @main
 struct KKRememberApp: App {
 
-  @State var route: NavigationPath = .init()
-  @State var loginEnable: Bool = false
+  @StateObject var appState: AppState = .init()
 
   var body: some Scene {
     WindowGroup {
-      if !self.loginEnable {
-        LoginView(login: self.$loginEnable)
+      if !self.appState.isLogin {
+        LoginView()
+          .environmentObject(self.appState)
       } else {
         MainView()
+          .environmentObject(self.appState)
       }
     }
+
   }
 
 }

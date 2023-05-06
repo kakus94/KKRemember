@@ -15,7 +15,7 @@ struct LoginView: View {
   @State var password: String = ""
   @State var emailRecovery: String = ""
 
-  @Binding var login: Bool
+  @EnvironmentObject var appState: AppState
 
   var body: some View {
     NavigationStack {
@@ -29,7 +29,7 @@ struct LoginView: View {
 
           EntryTextLabel(label: "Password", placeholder: "Password", value: self.$password)
 
-          ButtonApp(action: { self.login.toggle() }) {
+          ButtonApp(action: { self.appState.isLogin.toggle() }) {
             TextBody("Login")
               .maxWidth(.center)
           }
@@ -72,7 +72,8 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
   static var previews: some View {
-    LoginView(login: .constant(false))
+    LoginView()
+      .environmentObject(AppState())
   }
 }
 

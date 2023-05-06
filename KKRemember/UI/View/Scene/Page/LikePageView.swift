@@ -9,11 +9,11 @@ import SwiftUI
 
 struct LikePageView: View {
 
-  let itemsLike = ReminderItem.mockReminders
+  @State var itemsLike: ReminderItems
 
   var body: some View {
     NavigationStack {
-      List(self.itemsLike.sorted(by: { $0.startdate < $1.startdate })) { item in
+      List(self.itemsLike.items.sorted(by: { $0.startdate < $1.startdate })) { item in
         ItemListView(item: item)
           .swipeActions(edge: .leading, allowsFullSwipe: true) {
 
@@ -66,6 +66,8 @@ struct LikePageView: View {
 
 struct LikePageView_Previews: PreviewProvider {
   static var previews: some View {
-    LikePageView()
+    let model: ReminderItems = .init(items: ReminderItem.mockReminders)
+
+    LikePageView(itemsLike: model)
   }
 }

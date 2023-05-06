@@ -9,17 +9,17 @@ import SwiftUI
 
 struct ReceivedPageView: View {
 
-  var items = ReminderItem.mockReminders
+  @State var items: ReminderItems
 
   var body: some View {
     NavigationStack {
-      List(self.items.sorted(by: { $0.startdate < $1.startdate })) { item in
+      List(self.items.items.sorted(by: { $0.startdate < $1.startdate })) { item in
         ItemListView(item: item)
           .swipeActions(edge: .leading, allowsFullSwipe: true) {
             self.swipeActionLeading(item)
           }
           .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-            self.swipeActionTraling(<#T##item: ReminderItem##ReminderItem#>)
+            self.swipeActionTraling(item)
           }
       }
       .navigationTitle("Archives")
@@ -72,6 +72,7 @@ struct ReceivedPageView: View {
 
 struct ReceivedPageView_Previews: PreviewProvider {
   static var previews: some View {
-    ReceivedPageView()
+    let model: ReminderItems = .init(items: ReminderItem.mockReminders)
+    ReceivedPageView(items: model)
   }
 }

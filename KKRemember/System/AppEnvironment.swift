@@ -7,4 +7,11 @@
 
 import Foundation
 
-struct AppEnvironment: Equatable {}
+struct AppEnvironment {
+
+  var account: Account?
+  var listItems: ReminderItems = .init()
+  var favoriteItems: ReminderItems = .init()
+  var archiveItems: ReminderItems = .init()
+
+}

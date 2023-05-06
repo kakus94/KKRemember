@@ -11,11 +11,11 @@ struct ListPageView: View {
 
   // MARK: Internal
 
-  let itemsList = ReminderItem.mockReminders
+  @State var itemsList: ReminderItems
 
   var body: some View {
     NavigationStack {
-      List(self.itemsList.sorted(by: { $0.startdate < $1.startdate })) { item in
+      List(self.itemsList.items.sorted(by: { $0.startdate < $1.startdate })) { item in
         ItemListView(item: item)
           .swipeActions(edge: .leading, allowsFullSwipe: true) {
 
@@ -84,6 +84,8 @@ struct ListPageView: View {
 
 struct ListPage_Previews: PreviewProvider {
   static var previews: some View {
-    ListPageView()
+    let model: ReminderItems = .init(items: ReminderItem.mockReminders)
+
+    ListPageView(itemsList: model)
   }
 }

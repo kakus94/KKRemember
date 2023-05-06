@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19228DE72A06D8C300C5E26E /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19228DE62A06D8C300C5E26E /* Account.swift */; };
 		1941906229CCFA02001391C6 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1941906129CCFA02001391C6 /* Logo.swift */; };
 		1950A4E129BC91CC00ECA727 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1950A4E029BC91CC00ECA727 /* AppState.swift */; };
 		1950A4E329BC92D600ECA727 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1950A4E229BC92D600ECA727 /* AppEnvironment.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19228DE62A06D8C300C5E26E /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		1941906129CCFA02001391C6 /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
 		1950A4E029BC91CC00ECA727 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		1950A4E229BC92D600ECA727 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
@@ -131,7 +133,6 @@
 				199CC09929BA8AF000D4F51D /* KKRememberApp.swift */,
 				1950A4E229BC92D600ECA727 /* AppEnvironment.swift */,
 				1950A4E729BC9BFF00ECA727 /* SystemEventHandler.swift */,
-				196085F629EABD29005C7E1E /* FileManager.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -207,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				196085EF29E9E89F005C7E1E /* ReminderItem.swift */,
+				19228DE62A06D8C300C5E26E /* Account.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -215,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				196085F429E9EDDF005C7E1E /* ExDate.swift */,
+				196085F629EABD29005C7E1E /* FileManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				196085EA29E9DCF3005C7E1E /* ForgotPassword.swift in Sources */,
 				1941906229CCFA02001391C6 /* Logo.swift in Sources */,
 				196085FD29FEF2CB005C7E1E /* NewSheetView.swift in Sources */,
+				19228DE72A06D8C300C5E26E /* Account.swift in Sources */,
 				19EEE5B529E15E6200C9581F /* SettingPageView.swift in Sources */,
 				196085F029E9E89F005C7E1E /* ReminderItem.swift in Sources */,
 				196085F529E9EDDF005C7E1E /* ExDate.swift in Sources */,
