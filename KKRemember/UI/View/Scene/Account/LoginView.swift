@@ -9,15 +9,14 @@ import SwiftUI
 
 struct LoginView: View {
 
+  // MARK: Internal
+
   @State var email: String = ""
   @State var password: String = ""
   @State var emailRecovery: String = ""
 
   @Binding var login: Bool
-  
-  @State private var registerPresentView: Bool = false
-  @State private var showForgotPassword: Bool = false
-  
+
   var body: some View {
     NavigationStack {
       ScrollView {
@@ -25,23 +24,23 @@ struct LoginView: View {
         Logo()
 
         VStack(spacing: 20) {
-          
+
           EntryTextLabel(label: "Email", placeholder: "Email", value: self.$email)
-          
+
           EntryTextLabel(label: "Password", placeholder: "Password", value: self.$password)
 
-          ButtonApp(action: { login.toggle() }) {
+          ButtonApp(action: { self.login.toggle() }) {
             TextBody("Login")
               .maxWidth(.center)
           }
           .foregroundColor(.green)
 
-          ButtonApp(action: { registerPresentView = true }) {
+          ButtonApp(action: { self.registerPresentView = true }) {
             TextBody("I don't have an account")
               .maxWidth(.center)
           }
 
-          ButtonApp(action: { showForgotPassword.toggle() }) {
+          ButtonApp(action: { self.showForgotPassword.toggle() }) {
             TextBody("I forgot my password")
               .maxWidth(.center)
           }
@@ -52,19 +51,23 @@ struct LoginView: View {
 
       }
       .maxWidth(.center)
-      
-      .navigationDestination(isPresented: $registerPresentView) {
+
+      .navigationDestination(isPresented: self.$registerPresentView) {
         RegisterView()
       }
-      
-      .sheet(isPresented: $showForgotPassword) {
-        ForgotPassword(value: $emailRecovery)
-          .presentationDetents([ .medium, .large])
+
+      .sheet(isPresented: self.$showForgotPassword) {
+        ForgotPassword(value: self.$emailRecovery)
+          .presentationDetents([.medium, .large])
           .presentationDragIndicator(.automatic)
-    }
+      }
     }
   }
 
+  // MARK: Private
+
+  @State private var registerPresentView: Bool = false
+  @State private var showForgotPassword: Bool = false
 }
 
 struct LoginView_Previews: PreviewProvider {

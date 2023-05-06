@@ -9,6 +9,4 @@ import Foundation
 
 protocol SystemEventHandler {}
 
-struct RealSystemEventHandler: SystemEventHandler {
-
-}
+struct RealSystemEventHandler: SystemEventHandler {}

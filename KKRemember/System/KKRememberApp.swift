@@ -12,20 +12,20 @@ struct KKRememberApp: App {
 
   @State var route: NavigationPath = .init()
   @State var loginEnable: Bool = false
-  
+
   var body: some Scene {
     WindowGroup {
-        if !loginEnable {
-          LoginView(login: $loginEnable)
-        } else {
-          MainView()
-        }
+      if !self.loginEnable {
+        LoginView(login: self.$loginEnable)
+      } else {
+        MainView()
       }
     }
-  
+  }
+
 }
 
 enum Route: Hashable {
-    case login
-    case register
+  case login
+  case register
 }

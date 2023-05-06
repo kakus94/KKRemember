@@ -10,8 +10,4 @@ import Foundation
 
 struct AppState: Equatable {}
 
-extension AppState {
-//  static func == (lhs: AppState, rhs: AppState) -> Bool {
-//
-//  }
-}
+extension AppState {}

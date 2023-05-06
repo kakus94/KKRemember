@@ -8,46 +8,50 @@
 import SwiftUI
 
 struct ForgotPassword: View {
-  
+
+  // MARK: Internal
+
   @Binding var value: String
-  
+
   var handler: (() -> Void)?
-  
-  @State private var disable: Bool = true
-  
-    var body: some View {
-      NavigationStack {
-        VStack {
-          List {
-            Section("Enter the email you used during registration") {
-              HStack{
-                
-                Text("Email:")
-                
-                TextField("", text: $value)
-                  .textFieldStyle(KKTextFieldStyle())
-              }
+
+  var body: some View {
+    NavigationStack {
+      VStack {
+        List {
+          Section("Enter the email you used during registration") {
+            HStack {
+
+              Text("Email:")
+
+              TextField("", text: self.$value)
+                .textFieldStyle(KKTextFieldStyle())
             }
-            
-            Section{
-              Button(action: { handler?() }) {
-                Text("Recover password")
-                  .disabled(value.count < 4)
-              }
-            }
-     
           }
-         
+
+          Section {
+            Button(action: { self.handler?() }) {
+              Text("Recover password")
+                .disabled(self.value.count < 4)
+            }
+          }
+
         }
-        .navigationBarTitleDisplayMode(.large)
-      .navigationTitle("Password recovery")
+
       }
+      .navigationBarTitleDisplayMode(.large)
+      .navigationTitle("Password recovery")
     }
+  }
+
+  // MARK: Private
+
+  @State private var disable: Bool = true
 }
 
 struct ForgotPassword_Previews: PreviewProvider {
-    static var previews: some View {
-        ForgotPassword(value: .constant("aassa@gmail.com"))
-   
-    }
+  static var previews: some View {
+    ForgotPassword(value: .constant("aassa@gmail.com"))
+
+  }
 }

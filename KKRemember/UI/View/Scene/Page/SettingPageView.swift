@@ -8,41 +8,36 @@
 import SwiftUI
 
 struct SettingPageView: View {
-    var body: some View {
-      NavigationStack {
-        List {
-          Cell(label: "Pseudomin") {
-            EntryText(value: .constant("Szejku"))
-          }
-          
-
+  var body: some View {
+    NavigationStack {
+      List {
+        Cell(label: "Pseudomin") {
+          EntryText(value: .constant("Szejku"))
         }
-          .navigationTitle("Setting")
-      } 
+
+      }
+      .navigationTitle("Setting")
     }
-  
-  
-  
+  }
+
 }
 
+private struct Cell<Content: View>: View {
 
-fileprivate struct Cell<Content: View>: View {
-  
   var label: String
   @ViewBuilder var content: () -> Content
-  
+
   var body: some View {
     HStack {
-      Text(label)
+      Text(self.label)
         .maxWidth(.leading)
-      content()
+      self.content()
     }
   }
 }
 
-
 struct SettingPageView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingPageView()
-    }
+  static var previews: some View {
+    SettingPageView()
+  }
 }
