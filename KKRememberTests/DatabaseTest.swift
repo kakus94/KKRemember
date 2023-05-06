@@ -20,14 +20,6 @@ final class DatabaseTest: XCTestCase {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
   }
   
-  func testExample() throws {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-    // Any test you write for XCTest can be annotated as throws and async.
-    // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-    // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-  }
-  
   func testSaveData() async throws {
     await Database.share.savaToFile(referenceModel, typeSave: .list)
   }
@@ -39,6 +31,26 @@ final class DatabaseTest: XCTestCase {
     XCTAssertEqual(model?.items.first?.tittle, referenceModel.items.first?.tittle)
     XCTAssertEqual(model?.items.first?.startdate, referenceModel.items.first?.startdate)
     XCTAssertEqual(model?.items.first?.enddate, referenceModel.items.first?.enddate)
+  }
+  
+  func testRemoveFile() async throws {
+    //save model
+    await Database.share.savaToFile(referenceModel, typeSave: .archive)
+    
+    //try read model
+    let model = try await Database.share.readFromTheFile(ReminderItems.self, typeSave: .archive)
+    
+    //check id
+    XCTAssertEqual(model?.items.first?.id, referenceModel.items.first?.id)
+    
+    //delate file
+    await Database.share.delateFromTheFile(typeSave: .archive)
+    
+    //try read
+    let delateModel = try await Database.share.readFromTheFile(ReminderItems.self, typeSave: .archive)
+    
+    XCTAssertNil(delateModel)
+    
   }
 }
 

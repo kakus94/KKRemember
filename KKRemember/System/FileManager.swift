@@ -18,7 +18,7 @@ actor Database {
       do {
         try data.write(to: pathWithFileName)
       } catch {
-        print(error)
+        print(error.localizedDescription)
       }
     }
   }
@@ -30,10 +30,25 @@ actor Database {
         let result = try Data(contentsOf: pathWithFileName)
         return result
       } catch {
-        print(error)
+        print(error.localizedDescription)
       }
     }
     return nil
+  }
+  
+  private func delate(type: TypeSave) {
+    if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+      let pathWithFileName = documentDirectory.appendingPathComponent(type.url)
+      do {
+        try FileManager.default.removeItem(at: pathWithFileName)
+      } catch {
+        print(error.localizedDescription)
+      }
+    }
+  }
+  
+  func delateFromTheFile(typeSave: TypeSave){
+    delate(type: typeSave)
   }
   
   func savaToFile<T: Encodable>(_ model: T, typeSave: TypeSave) {
@@ -69,25 +84,3 @@ actor Database {
   
 }
 
-
-
-
-
-/*
- 
- let jsonString = "{\"location\": \"the moon\"}"
-
- if let documentDirectory = FileManager.default.urls(for: .documentDirectory,
-                                                     in: .userDomainMask).first {
-     let pathWithFilename = documentDirectory.appendingPathComponent("myJsonString.json")
-     do {
-         try jsonString.write(to: pathWithFilename,
-                              atomically: true,
-                              encoding: .utf8)
-     } catch {
-         // Handle error
-     }
- }
- 
- 
- */
